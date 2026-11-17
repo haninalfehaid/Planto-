@@ -68,10 +68,10 @@ struct MyPlantsView: View {
                         Button(role: .destructive) {
                             withAnimation { viewModel.delete(plant) }
                         } label: {
-                            Label("Delete", systemImage: "trash")
+                            Image(systemName: "trash")
                         }
-                    }
-                }
+                        .tint(.red)
+                    }                }
             }
             .listStyle(.plain)
             .scrollContentBackground(.hidden)

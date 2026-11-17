@@ -46,18 +46,20 @@ struct SetReminderView: View {
                 ToolbarItem(placement: .cancellationAction) {
                     Button { dismiss() } label: {
                         Image(systemName: "xmark")
+                            .foregroundStyle(.white)
                     }
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     Button {
+                        guard form.canSave else { return }
                         onSave(form.buildPlant())
                         dismiss()
                     } label: {
                         Image(systemName: "checkmark")
+                            .foregroundStyle(.white)
                     }
                     .buttonStyle(.glassProminent)
                     .tint(.plantGreen)
-                    .disabled(!form.canSave)
                 }
             }
         }
